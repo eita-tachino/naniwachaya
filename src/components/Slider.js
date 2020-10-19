@@ -41,6 +41,13 @@ const Slider = () => {
       setIndex(0)
     }
   },[index,customers])
+
+  // useEffect(() => {
+  //   let slider = setIntercal(()=>{
+  //     setIndex(index + 1);
+  //   },3000)
+  //   return () => clearInterval(slider);
+  // }, [index]);
   // more logic
   return (
     <Wrapper className="section">

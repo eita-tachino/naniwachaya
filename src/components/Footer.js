@@ -5,7 +5,7 @@ const Footer = () => {
     <Wrapper>
       <p>
         &copy; {new Date().getFullYear()} なにわ茶屋. All rights reserved.
-        Built with Gatsby
+        〒949-6680 新潟県南魚沼市六日町９２−６
       </p>
     </Wrapper>
   )
