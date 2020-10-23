@@ -1,5 +1,6 @@
 import React, { useContext } from "react"
 import styled from "styled-components"
+import "typeface-noto-serif-jp"
 import logo from "../images/logo.svg"
 import { GoThreeBars } from "react-icons/go"
 import { Link } from "gatsby"
@@ -105,6 +106,7 @@ const Wrapper = styled.nav`
       width: 100%;
       text-transform: capitalize;
       position: relative;
+      font-family: "Noto Serif JP", serif;
     }
   }
 `

@@ -39,7 +39,7 @@ const fadeIn = keyframes`
 const Wrapper = styled.section`
   .bcg {
     /* MUST!!!!!! */
-    min-height: 100vh;
+    min-height: 95vh;
     margin-top: -5rem;
     display: grid;
     place-items: center;

@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import "typeface-noto-serif-jp"
 
 const Title = ({ title }) => {
   return (
@@ -16,6 +17,7 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     font-weight: 500;
+    font-family: "Noto Serif JP", serif;
     span {
       font-size: 0.85em;
       color: var(--clr-primary-5);

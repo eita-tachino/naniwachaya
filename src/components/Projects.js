@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import Title from "./Title"
+import "typeface-noto-serif-jp"
 import styled from "styled-components"
 import Image from "gatsby-image"
 import SearchButtons from "./SearchButtons"
@@ -21,10 +22,10 @@ const Projects = ({projects:data,title,page}) => {
       setBackToAll={setBackToAll} 
     />
     )}
-    <div className="section-center">
+    <div className="section">
       {projects.map((item)=>{
         const {id} = item;
-        const {name,type} = item.data
+        const {name,type,description} = item.data
         const fluid = item.data.image.localFiles[0].childImageSharp.fluid
         return <article key={id}>
           <div className="container">
@@ -32,6 +33,7 @@ const Projects = ({projects:data,title,page}) => {
             <div className="info">
               <p>-{type}-</p>
               <h3>{name}</h3>
+              <p>{description}</p>
             </div>
           </div>
         </article>
@@ -39,7 +41,7 @@ const Projects = ({projects:data,title,page}) => {
     </div>
     {!page && (
     <Link to="/projects" className="btn">
-      all projects
+      all menus
     </Link>
     )}
   </Wrapper>
@@ -47,16 +49,17 @@ const Projects = ({projects:data,title,page}) => {
 }
 
 const Wrapper = styled.section`
-  background: var(--clr-grey-10);
-  .section-center {
-    margin-top: 4rem;
-    max-width: var(--max-width);
+  background: var(--clr-white);
+  .section {
+    margin-top: 2rem;
+    /* max-width: var(--max-width); */
     display: grid;
-    gap: 2rem;
+    /* gap: 1rem; */
     /* safari workaround */
-    grid-gap: 2rem;
+    /* grid-gap: 2rem; */
     .img {
-      height: 20rem;
+      /* height: 20rem; */
+      height: 80vh;
       border-radius: var(--radius);
       transition: var(--transition);
     }
@@ -78,18 +81,21 @@ const Wrapper = styled.section`
       }
       .info {
         position: absolute;
-        top: 50%;
-        left: 50%;
+        bottom: 10%;
+        left: 30%;
         transform: translate(-50%, -50%);
-        width: 100%;
-        opacity: 0;
+        width: 50%;
+        opacity: 1;
         transition: var(--transition);
         color: var(--clr-white);
         text-align: center;
+        font-size: 0.8rem;
+        font-family: "Noto Serif JP", serif;
         p {
           margin-bottom: 0.5rem;
           color: var(--clr-white);
           text-transform: uppercase;
+          font-family: "Noto Serif JP", serif;
         }
       }
       &:hover .info {
@@ -98,19 +104,22 @@ const Wrapper = styled.section`
     }
     @media (min-width: 768px) {
       .img {
-        height: 15rem;
+        /* height: 15rem; */
+        height: 80vh;
       }
       grid-template-columns: 1fr 1fr;
     }
     @media (min-width: 992px) {
       .img {
-        height: 12.5rem;
+        /* height: 12.5rem; */
+        height: 80vh;
       }
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr;
     }
     @media (min-width: 1200px) {
       .img {
-        height: 15rem;
+        /* height: 15rem; */
+        height: 80vh;
       }
     }
   }
@@ -120,6 +129,9 @@ const Wrapper = styled.section`
     text-align: center;
     margin: 0 auto;
     margin-top: 3rem;
+  }
+  h3{
+    font-family: "Noto Serif JP", serif;
   }
 `
 export default Projects

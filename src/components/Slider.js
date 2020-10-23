@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Title from "./Title"
+import "typeface-noto-serif-jp"
 import styled from "styled-components"
 import Image from "gatsby-image"
 import { FaQuoteRight } from "react-icons/fa"
@@ -35,19 +36,19 @@ const Slider = () => {
   React.useEffect(()=>{
     const lastIndex = customers.length - 1;
     if(index < 0){
-      setIndex(lastIndex)
+      setIndex(lastIndex);
     }
     if(index > lastIndex){
       setIndex(0)
     }
-  },[index,customers])
+  },[index,customers]);
 
-  // useEffect(() => {
-  //   let slider = setIntercal(()=>{
-  //     setIndex(index + 1);
-  //   },3000)
-  //   return () => clearInterval(slider);
-  // }, [index]);
+  useEffect(()=>{
+    let slider = setInterval(()=>{
+      setIndex(index + 1)
+    },9000);
+    return () => clearInterval(slider);
+  },[index])
   // more logic
   return (
     <Wrapper className="section">
@@ -105,16 +106,19 @@ const Wrapper = styled.div`
       text-transform: uppercase;
       color: var(--clr-primary-5);
       margin-bottom: 0.25rem;
+      font-family: "Noto Serif JP", serif;
     }
     .title {
       text-transform: capitalize;
       margin-bottom: 0.75rem;
+      font-family: "Noto Serif JP", serif;
     }
     .text {
       max-width: 45em;
       margin: 0 auto;
       line-height: 2;
       color: var(--clr-grey-5);
+      font-family: "Noto Serif JP", serif;
     }
     .icon {
       font-size: 3rem;

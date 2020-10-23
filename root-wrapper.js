@@ -1,5 +1,6 @@
 import React from 'react'
 import {createGlobalStyle} from 'styled-components'
+import "typeface-noto-serif-jp"
 // provider
 
 const GlobalStyle = createGlobalStyle`
@@ -42,8 +43,8 @@ Variables
   --clr-green-dark: hsl(125, 67%, 44%);
   --clr-green-light: hsl(125, 71%, 66%);
   --clr-black: #222;
-  --ff-primary: "Roboto", sans-serif;
-  --ff-secondary: "Open Sans", sans-serif;
+  --ff-primary: "Noto Serif JP", serif;
+  --ff-secondary: "Noto Serif JP", serif;
   --transition: all 0.3s linear;
   --spacing: 0.1rem;
   --radius: 0.25rem;

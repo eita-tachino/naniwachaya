@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Background from "./Background"
 import styled from "styled-components"
+import "typeface-noto-serif-jp"
 import { Link } from "gatsby"
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi"
 const Hero = ({projects}) => {
@@ -9,23 +10,29 @@ const Hero = ({projects}) => {
     const image = localFiles[0].childImageSharp.fluid
     return image
   })
-  const [index,setIndex] = React.useState(0)
+  const [index,setIndex] = React.useState(0);
   React.useEffect(()=>{
-    const lastIndex = images.length - 1
+    const lastIndex = images.length - 1;
     if(index < 0){
-      setIndex(lastIndex)
+      setIndex(lastIndex);
     }
     if(index > lastIndex){
       setIndex(0)
     }
-  },[index,images])
+  },[index,images]);
+  useEffect(()=>{
+    let slider = setInterval(()=>{
+      setIndex(index + 1)
+    },7000);
+    return () => clearInterval(slider);
+  },[index])
   return (
   <Wrapper>
     <Background image={images[index]}  >
       <article>
-      <h3>至極の料理とお酒に舌鼓をうつ</h3>
-      <h1>割烹料理なにわ茶屋</h1>
-      <Link to="/projects">詳しくみる</Link>
+      <h4>至極の料理とお酒に舌鼓をうつ</h4>
+      <h3>割烹料理なにわ茶屋</h3>
+      {/* <Link to="/projects">詳しくみる</Link> */}
       </article>
       <button className="prev-btn" onClick={()=> setIndex(index- 1)}>
         <FiChevronLeft/>
@@ -39,7 +46,6 @@ const Hero = ({projects}) => {
           key={btnIndex}
           onClick={()=> setIndex(btnIndex)}
           className={index === btnIndex ? 'active':undefined}>
-
           </span>
         })}
       </div>
@@ -60,10 +66,14 @@ const Wrapper = styled.section`
       line-height: 1.25;
       margin: 2rem 0 3rem 0;
       letter-spacing: 3px;
+      font-family: "Noto Serif JP", serif;
     }
     h3 {
       font-weight: 400;
-      font-family: "Caveat", cursive;
+      font-family: "Noto Serif JP", serif;
+    }
+    h4{
+      font-family: "Noto Serif JP", serif;
     }
     a {
       background: transparent;

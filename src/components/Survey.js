@@ -1,11 +1,27 @@
 import React, { useEffect, useState } from "react"
 import Title from "./Title"
 import styled from "styled-components"
+import data from '../constants/data'
+import SingleQuestion from '../constants/Question';
 import base from "./Airtable"
 import { FaVoteYea } from "react-icons/fa"
 
 const Survey = () => {
-  return <h2>survey component</h2>
+  const [questions, setQuestions] = useState(data);
+  return (
+    <Wrapper className="section">
+      <div className='container'>
+        <h3>よくある問合せ</h3>
+        <section className='info'>
+          {questions.map((question) => {
+            return (
+              <SingleQuestion key={question.id} {...question}></SingleQuestion>
+            );
+          })}
+        </section>
+      </div>
+    </Wrapper>
+  );
 }
 
 const Wrapper = styled.section`

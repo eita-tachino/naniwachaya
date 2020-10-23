@@ -16,7 +16,8 @@ const HomePage = ({data}) => {
     <Layout>
       <Hero projects={projects} />
       <About/>
-      <Projects projects={projects} title="なにわのこだわり"/>
+      <Projects projects={projects} title="MENU"/>
+      <Survey/>
       <Slider/>
     </Layout>
   )
@@ -35,15 +36,40 @@ export const query = graphql`
             localFiles {
               childImageSharp {
                 fluid {
-                  ...GatsbyImageSharpFluid
+                  src
                 }
               }
             }
           }
+          description
         }
       }
     }
   }
 `
+
+// export const query = graphql`
+//   {
+//     allAirtable(filter: {table: {eq: "Projects"}}, limit: 3, sort: {fields: data___date, order: DESC}) {
+//       nodes {
+//         id
+//         data {
+//           date
+//           name
+//           type
+//           image {
+//             localFiles {
+//               childImageSharp {
+//                 fluid {
+//                   ...GatsbyImageSharpFluid
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
 
 export default HomePage

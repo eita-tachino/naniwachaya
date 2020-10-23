@@ -1,15 +1,16 @@
 import React from "react"
 import styled from "styled-components"
 import Title from "./Title"
+import "typeface-noto-serif-jp"
 import services from "../constants/services"
 const About = () => {
   return <Wrapper className="section">
-    <Title title="about us"/>
+    <Title title="ご案内"/>
     <div className="section-center">
       {services.map(({id,icon,label,text})=>{
         return (
         <article key={id}>
-          <span>{icon}</span>
+          {/* <span>{icon}</span> */}
           <h4>{label}</h4>
           <p>{text}</p>
         </article>
@@ -33,10 +34,12 @@ const Wrapper = styled.section`
     h4 {
       text-transform: uppercase;
       font-weight: 500;
+      font-family: "Noto Serif JP", serif;
     }
     p {
       color: var(--clr-grey-3);
       max-width: 35em;
+      font-family: "Noto Serif JP", serif;
     }
     @media (min-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
