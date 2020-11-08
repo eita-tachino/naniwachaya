@@ -4,8 +4,8 @@ const Footer = () => {
   return (
     <Wrapper>
       <p>
-        &copy; {new Date().getFullYear()} なにわ茶屋. All rights reserved.
-        〒949-6680 新潟県南魚沼市六日町９２−６
+        &copy; {new Date().getFullYear()} 京ほぐしYell. All rights reserved.
+        〒000-0000 京都市伏見区竹田真幡木町62番地カーサモリサキ103 TEL075-634-9032
       </p>
     </Wrapper>
   )

@@ -41,7 +41,7 @@ const Projects = ({projects:data,title,page}) => {
     </div>
     {!page && (
     <Link to="/projects" className="btn">
-      all menus
+      全コース
     </Link>
     )}
   </Wrapper>

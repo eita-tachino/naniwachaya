@@ -19,13 +19,13 @@ const Navbar = () => {
       </div>
       <ul className="nav-links">
         <li>
-          <button>なにわについて</button>
+          <button>京ほぐしYell</button>
         </li>
         <li>
-          <button>メニュー</button>
+          <button>施術コース</button>
         </li>
         <li>
-          <button>こだわり</button>
+          <button>ご予約</button>
         </li>
       </ul>
     </div>

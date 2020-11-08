@@ -52,7 +52,7 @@ const Slider = () => {
   // more logic
   return (
     <Wrapper className="section">
-      <Title title="reviews"/>
+      <Title title="お客様の声"/>
       <div className="section-center">
         {customers.map((customer,customerIndex)=>{
           const{data:{image,name,title,quote}} = customer;

@@ -16,7 +16,7 @@ const HomePage = ({data}) => {
     <Layout>
       <Hero projects={projects} />
       <About/>
-      <Projects projects={projects} title="MENU"/>
+      <Projects projects={projects} title="施術コース"/>
       <Survey/>
       <Slider/>
     </Layout>

@@ -8,7 +8,7 @@ const ProjectsPage = ({data}) => {
   return (
     <Wrapper>
       <Layout>
-        <Projects title="なにわのこだわり" projects={projects} page/>
+        <Projects title="全施術コース" projects={projects} page/>
       </Layout>
     </Wrapper>
   )

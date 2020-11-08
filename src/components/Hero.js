@@ -30,8 +30,8 @@ const Hero = ({projects}) => {
   <Wrapper>
     <Background image={images[index]}  >
       <article>
-      <h4>至極の料理とお酒に舌鼓をうつ</h4>
-      <h3>割烹料理なにわ茶屋</h3>
+      <h4>日々の疲れを一気に解消</h4>
+      <h3>京ほぐしYell</h3>
       {/* <Link to="/projects">詳しくみる</Link> */}
       </article>
       <button className="prev-btn" onClick={()=> setIndex(index- 1)}>
